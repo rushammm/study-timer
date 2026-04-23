@@ -3,10 +3,40 @@
   "version": "1.0.0",
   "description": "A cute pastel Pomodoro-style study timer",
   "main": "main.js",
+  "author": "rushammm",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
   "devDependencies": {
-    "electron": "^33.0.0"
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.rusham.studytimer",
+    "productName": "Study Timer",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "style.css",
+      "script.js",
+      "main.js",
+      "preload.js",
+      "mini-player.html",
+      "mini-player.css",
+      "mini-player.js",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "assets/icon.png",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "study-timer.exe"
+    }
   }
 }
