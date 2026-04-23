@@ -6,6 +6,16 @@ runs locally as an electron app, with a draggable always-on-top "now studying" w
 
 ---
 
+## download
+
+**[→ get the latest release](https://github.com/rushammm/study-timer/releases/latest)**
+
+grab `study-timer.exe` from the Assets section and double-click it. no install, no setup, no dependencies.
+
+> windows will show a blue "windows protected your pc" warning the first time you run an unsigned app. click **more info** → **run anyway**. you only need to do this once.
+
+---
+
 ## features
 
 ### timer
@@ -40,23 +50,28 @@ runs locally as an electron app, with a draggable always-on-top "now studying" w
 
 ---
 
-## run it
-
-```
-npm install
-npm start
-```
-
-first run downloads electron (~100mb, one time). after that, `npm start` is instant.
-
----
-
 ## keyboard
 
 | shortcut | action |
 |----------|--------|
 | `ctrl + shift + m` | toggle the floating widget |
 | `enter` (in `min` field) | set a custom duration |
+
+---
+
+## build from source
+
+if you want to hack on it or rebuild the exe yourself:
+
+```
+git clone https://github.com/rushammm/study-timer.git
+cd study-timer
+npm install
+npm start          # run in dev
+npm run dist       # build dist/study-timer.exe (~74mb portable)
+```
+
+first `npm install` downloads electron (~100mb, one time).
 
 ---
 
