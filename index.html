@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <title>Study Timer</title>
+</head>
+<body>
+  <!-- main card -->
+  <div class="card">
+    <div class="card-controls">
+      <button class="card-btn minimize" id="minimizeBtn" aria-label="minimize">&#8211;</button>
+      <button class="card-btn close" id="closeBtn" aria-label="close">&times;</button>
+    </div>
+    <p class="session-label">focus session</p>
+    <div class="display-wrap">
+      <div class="display">
+        <h1 class="timer" id="timer">25:00</h1>
+      </div>
+      <img class="melody-sticker melody-focus" src="assets/melody.png" alt="">
+      <img class="melody-sticker melody-break" src="assets/melody-sleep.png" alt="">
+    </div>
+
+    <div class="controls">
+      <button id="startBtn">start</button>
+      <button id="resetBtn">reset</button>
+    </div>
+
+    <div class="modes modes-focus">
+      <button onclick="setMode(25, 'focus')">25m</button>
+      <button onclick="setMode(30, 'focus')">30m</button>
+      <button onclick="setMode(45, 'focus')">45m</button>
+      <button onclick="setMode(60, 'focus')">1h</button>
+    </div>
+
+    <div class="modes modes-break">
+      <button onclick="setMode(5, 'break')">break</button>
+      <button onclick="setMode(15, 'long break')">long break</button>
+    </div>
+
+    <div class="custom-mode">
+      <input type="number" id="customInput" min="1" max="180" placeholder="min">
+      <button id="customBtn">set</button>
+    </div>
+
+    <p class="stats" id="stats">0 sessions today</p>
+  </div>
+
+</body>
+<script src="script.js"></script>
+</html>

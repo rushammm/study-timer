@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="mini-player.css">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <title>Now Studying</title>
+</head>
+<body>
+  <div class="mini-player">
+    <button class="mini-close" id="miniClose" aria-label="close">&times;</button>
+    <div class="mini-grip">
+      <div class="mini-art" id="miniArt" aria-hidden="true" data-mode="focus">
+        <img class="mini-melody mini-melody-focus" src="assets/melody.png" alt="">
+        <img class="mini-melody mini-melody-break" src="assets/melody-sleep.png" alt="">
+      </div>
+      <div class="mini-text">
+        <p class="mini-tag">now studying</p>
+        <p class="mini-title" id="miniLabel">focus session</p>
+        <p class="mini-time" id="miniTime">25:00</p>
+      </div>
+    </div>
+    <div class="mini-progress">
+      <div class="mini-progress-bar" id="miniProgress"></div>
+    </div>
+  </div>
+  <script src="mini-player.js"></script>
+</body>
+</html>

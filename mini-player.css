@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: block;
+    src: url('./assets/fonts/lexend-deca.woff2') format('woff2');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background: transparent;
+    font-family: 'Lexend Deca', system-ui, sans-serif;
+    overflow: hidden;
+    height: 100%;
+    user-select: none;
+}
+
+.mini-player {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    padding: 14px 14px 12px;
+    background: linear-gradient(180deg, #fffaf4 0%, #fff0e4 100%);
+    border: 3px solid #c9a070;
+    border-radius: 20px;
+    box-shadow:
+        0 5px 0 #b88860,
+        0 14px 30px rgba(178, 106, 138, 0.28);
+}
+
+.mini-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    color: #6b4228;
+    background: linear-gradient(180deg, #ffd6e4 0%, #f5a5c0 100%);
+    border: 2.5px solid #c9a070;
+    border-radius: 50%;
+    box-shadow: 0 2px 0 #b88860;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    -webkit-app-region: no-drag;
+}
+
+.mini-close:hover {
+    background: linear-gradient(180deg, #ffe0ec 0%, #ffb3cc 100%);
+}
+
+.mini-close:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 #b88860;
+}
+
+.mini-grip {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 2px;
+    -webkit-app-region: drag;
+}
+
+.mini-art {
+    flex: 0 0 54px;
+    width: 54px;
+    height: 54px;
+    border: 2.5px solid #c9a070;
+    border-radius: 12px;
+    background:
+        linear-gradient(rgba(201, 182, 228, 0.55) 50%, transparent 50%) 0 0 / 10px 10px,
+        linear-gradient(90deg, rgba(201, 182, 228, 0.55) 50%, transparent 50%) 0 0 / 10px 10px,
+        #f8f4ff;
+    display: grid;
+    place-items: center;
+    color: #e89ab2;
+    font-size: 22px;
+    box-shadow: inset 0 2px 0 rgba(201, 160, 112, 0.12);
+    overflow: hidden;
+    position: relative;
+}
+
+.mini-melody {
+    position: absolute;
+    inset: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    object-fit: contain;
+    display: none;
+    pointer-events: none;
+}
+
+.mini-art[data-mode="focus"] .mini-melody-focus,
+.mini-art[data-mode="break"] .mini-melody-break {
+    display: block;
+}
+
+.mini-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    line-height: 1.2;
+}
+
+.mini-tag {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #a87a5c;
+    margin-bottom: 2px;
+}
+
+.mini-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b4228;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mini-time {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e89ab2;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+}
+
+.mini-progress {
+    margin-top: 10px;
+    height: 6px;
+    background: rgba(201, 160, 112, 0.25);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.mini-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ffc2d8 0%, #f5a5c0 100%);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
